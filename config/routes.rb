@@ -1,5 +1,5 @@
 SampleProject::Application.routes.draw do
-  get "users/new"
+	resources :users
 	# get "static_pages/home"
 	# get "static_pages/help"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -9,7 +9,7 @@ SampleProject::Application.routes.draw do
   # root 'welcome#index'
 	root 'static_pages#home'
 	match '/', to: 'static_pages#home', via: 'get'
-	match 'signup', to: 'users#new', via: 'get'
+	match '/signup', to: 'users#new', via: 'get'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

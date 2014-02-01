@@ -6,10 +6,14 @@ gem 'rails', '4.0.2'
 #bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
 
+#crypt
+gem 'bcrypt-ruby', '3.1.2'
+
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails', '2.13.1' 
+	gem 'factory_girl_rails', '4.2.1'
 end
 
 group :test do
