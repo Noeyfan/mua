@@ -1,6 +1,7 @@
 SampleProject::Application.routes.draw do
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
+	resources :microposts, olny: [:create, :destroy]
 	# get "static_pages/home"
 	# get "static_pages/help"
   # The priority is based upon order of creation: first created -> highest priority.
