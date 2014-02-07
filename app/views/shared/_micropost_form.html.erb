@@ -1,7 +1,24 @@
-<%= form_for(@micropost) do |f| %>
+<%= form_for @micropost, :html => {:multipart => true} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= f.text_area :content, placeholder: "想对老公说点什么..." %>
+
+	<h6>
+		添加图片~~ ^^
+	</h6>
+
+	<input id="micropost_photo" name="micropost[photo]" type="file" style="display:none">
+		<div class="input-append">
+			<input id="photoCover" class="input-large" type="text">
+			<a class="btn" onclick="$('input[id=micropost_photo]').click();">Browse</a>
+		</div>
+ 
+	<script type="text/javascript">
+		$('input[id=micropost_photo]').change(function() {
+		$('#photoCover').val($(this).val()); });
+  </script>
+
+
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
