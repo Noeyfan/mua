@@ -1,7 +1,7 @@
 class Micropost < ActiveRecord::Base
   belongs_to :user
   default_scope -> { order('created_at DESC') }
-  validates :content, presence: true, length: { maximum: 1400 }
+  validates :content, presence: true, length: { maximum: 14000 }
   validates :user_id, presence: true
 	has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => ""
   # Returns microposts from the users being followed by the given user.
